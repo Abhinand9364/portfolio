@@ -1,0 +1,59 @@
+:root {
+    --primary: #6366f1; /* Indigo accent */
+    --bg: #030712;
+    --card-bg: rgba(31, 41, 55, 0.5);
+    --text-main: #f9fafb;
+    --text-dim: #9ca3af;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-dim); transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* Hero Section */
+header { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.badge { background: rgba(99, 102, 241, 0.1); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--primary); }
+h1 { font-size: 4.5rem; margin: 1rem 0; letter-spacing: -2px; }
+.tagline { font-size: 1.5rem; color: var(--text-dim); margin-bottom: 2rem; }
+
+/* Buttons */
+.btn-primary { background: var(--primary); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+.btn-secondary { color: var(--text-main); margin-left: 1rem; text-decoration: none; border-bottom: 1px solid var(--primary); }
+
+/* Projects Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 0 8%; }
+.card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem; border-radius: 16px; transition: 0.4s; }
+.card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.tech-stack { display: block; margin-top: 1.5rem; font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+
+/* Skills */
+.skills-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; padding: 2rem 8%; }
+.skill-tag { background: #1f2937; padding: 8px 16px; border-radius: 8px; border: 1px solid #374151; }
+
+/* Footer */
+footer { padding: 5rem 8%; text-align: center; border-top: 1px solid #1f2937; margin-top: 5rem; }
+.social-icons a { margin: 0 10px; color: var(--primary); text-decoration: none; }
