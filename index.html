@@ -12,9 +12,9 @@
     <nav>
         <div class="logo">APS<span>.</span></div>
         <ul class="nav-links">
-            <li><a href="#home">Cloud Ops</a></li>
-            <li><a href="#projects">Deployments</a></li>
-            <li><a href="#contact" class="btn-contact">Inquiry</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact" class="btn-contact">Contact Me</a></li>
         </ul>
     </nav>
 
@@ -24,40 +24,55 @@
             <h1>Abhinand P. S</h1>
             <p class="tagline">Cloud Professional</p>
             <p class="description">Specializing in architecting resilient, scalable cloud environments and automated CI/CD pipelines.</p>
-            <div class="hero-btns" style="margin-top: 60px;">
-                <a href="#projects" class="btn-primary">View Deployments</a>
+            <div class="hero-btns" style="margin-top: 40px;">
+                <a href="#contact" class="btn-primary">Touch Me</a>
             </div>
         </div>
     </header>
 
-    <section id="projects">
-        <h2 class="section-title">Infrastructure Projects</h2>
+    <section id="about" style="padding: 80px 8%; text-align: center;">
+        <h2 class="section-title">About Me</h2>
+        <div class="contact-card" style="max-width: 800px; text-align: left; margin: 0 auto;">
+            <p style="font-size: 1.1rem; color: var(--text-main); line-height: 1.8;">
+                I am a <strong>BCA Cloud Computing student at Kristu Jayanti University</strong>, passionate about automation, cloud infrastructure, and DevOps practices. My goal is to become a skilled DevOps Engineer and work on scalable, production-level systems.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
         <div class="grid">
             <div class="card reveal">
                 <div class="card-content">
-                    <h3>Auto-Scaling Web Cluster</h3>
-                    <p>Designed a high-availability architecture utilizing Load Balancers and automated failover protocols.</p>
-                    <span class="tech-stack">AWS • Terraform • Docker</span>
+                    <h3>Development</h3>
+                    <p>Python, Java, C Programming</p>
                 </div>
             </div>
             <div class="card reveal">
                 <div class="card-content">
-                    <h3>Serverless API Integration</h3>
-                    <p>Implemented a cost-effective serverless backend for real-time data processing and storage.</p>
-                    <span class="tech-stack">Azure Functions • NoSQL • Python</span>
+                    <h3>Web & Design</h3>
+                    <p>HTML5, CSS3</p>
+                </div>
+            </div>
+            <div class="card reveal">
+                <div class="card-content">
+                    <h3>Core Expertise</h3>
+                    <p>Cloud Computing, Infrastructure Automation, DevOps Practices</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Inquiry Form</h2>
+        <h2 class="section-title">Contact Me</h2>
         <p style="text-align: center; color: var(--text-dim); margin-bottom: 2rem;">Please leave your details below, and I will get back to you shortly.</p>
         <div class="contact-card">
             <form id="visitor-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Professional Email" required>
-                <textarea placeholder="Purpose of Inquiry (Project, Recruitment, etc.)" rows="4"></textarea>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Professional Email" required>
+                </div>
+                <textarea name="message" placeholder="Purpose of Inquiry (Project, Recruitment, etc.)" rows="4" required></textarea>
                 <button type="submit" class="btn-primary">Submit Details</button>
             </form>
         </div>
