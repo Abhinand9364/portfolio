@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll logic
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -9,39 +9,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle Visitor Form Submission
+    // Handle Professional Form Submission
     const visitorForm = document.getElementById('visitor-form');
     if (visitorForm) {
         visitorForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Get form fields by their index or add 'name' attributes to HTML
-            const name = visitorForm.querySelector('input[type="text"]').value;
-            const email = visitorForm.querySelector('input[type="email"]').value;
-            const message = visitorForm.querySelector('textarea').value;
-
             const submitBtn = visitorForm.querySelector('button');
             submitBtn.innerText = "Sending...";
             submitBtn.disabled = true;
 
+            const formData = {
+                name: visitorForm.name.value,
+                email: visitorForm.email.value,
+                message: visitorForm.message.value
+            };
+
             try {
+                // Ensure this URL matches your Render Dashboard exactly
                 const response = await fetch('https://backend-4oii.onrender.com/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, message })
+                    body: JSON.stringify(formData)
                 });
 
                 const result = await response.json();
 
                 if (result.success) {
-                    alert("Thank you! Your inquiry has been sent to Abhinand P. S.");
+                    alert("Thank you! Abhinand P. S has received your professional inquiry.");
                     visitorForm.reset();
                 } else {
-                    alert("Submission failed. Please try again.");
+                    alert("Submission failed. Check backend logs.");
                 }
             } catch (error) {
-                console.error("Connection Error:", error);
-                alert("Server is waking up. Please wait a moment and try again.");
+                console.error("Error:", error);
+                alert("Server is waking up. Please try again in 30 seconds.");
             } finally {
                 submitBtn.innerText = "Submit Details";
                 submitBtn.disabled = false;
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll Reveal Logic
+    // Scroll Reveal Animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
